@@ -65,7 +65,7 @@ public class Sudoku {
      * @return the number in the cell or null if the cell is empty
      */
     public Integer getNumber(int row, int col) throws IllegalArgumentException {
-        return null;
+        return null; // TODO: implement this method
     }
 
     /**
@@ -75,7 +75,7 @@ public class Sudoku {
      * @return true if the board is solved, false otherwise
      */
     public boolean isSolved() {
-        return false;
+        return false; // TODO: implement this method
     }
 
     /**
@@ -101,8 +101,7 @@ public class Sudoku {
      */
     @Override
     public String toString() {
-        // TODO: Build the string representation of the Sudoku board in the following
-        // format:
+        // TODO: Build the string representation of the Sudoku in the correct format
         return """
                 ? ? ? | ? ? ? | ? ? ?
                 ? ? ? | ? ? ? | ? ? ?

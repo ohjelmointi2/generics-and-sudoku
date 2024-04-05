@@ -17,7 +17,7 @@ public class RandomizerTest {
 
     @Test
     void getRandomReturnsRandomItemsFromTheGivenList() {
-        // get a random item enough times and collect the results
+        // get lots of random items from the list and collect the results
         Set<String> results = new HashSet<>();
         for (int i = 0; i < 10_000; i++) {
             results.add(randomizer.getRandom(locations));

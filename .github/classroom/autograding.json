@@ -1,15 +1,44 @@
 {
-    "tests": [
-      {
-        "name": "Run tests",
-        "setup": "",
-        "run": "./gradlew test",
-        "input": "",
-        "output": "",
-        "comparison": "exact",
-        "timeout": 1,
-        "points": 100
-      }
-    ]
-  }
-  
+  "tests": [
+    {
+      "name": "Randomizer.java",
+      "setup": "",
+      "run": "./gradlew test --tests RandomizerTest",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 25
+    },
+    {
+      "name": "Generic randomizer",
+      "setup": "",
+      "run": "./gradlew test --tests GenericRandomizerTest",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 25
+    },
+    {
+      "name": "Grid.java",
+      "setup": "",
+      "run": "./gradlew test --tests GridTest",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 25
+    },
+    {
+      "name": "Sudoku.java",
+      "setup": "",
+      "run": "./gradlew test --tests SudokuTest",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 25
+    }
+  ]
+}

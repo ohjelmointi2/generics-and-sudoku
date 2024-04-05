@@ -5,6 +5,7 @@ import java.util.Scanner;
 import grid.Grid;
 
 /**
+ *
  * This class contains the game loop for a Sudoku game. The game is played in
  * the console by entering the row, column and number to place on the board.
  *
@@ -18,6 +19,9 @@ import grid.Grid;
  * a two-dimensional grid, and the Sudoku class could be used with a different
  * types of user interfaces, such as a graphical user interface or a web
  * interface.
+ *
+ * You do not need to modify this class, but you are allowed to make changes if
+ * needed.
  */
 public class SudokuGame {
 
@@ -38,7 +42,7 @@ public class SudokuGame {
         System.out.println("Welcome to the Sudoku game! Press Ctrl + C to exit.\n");
 
         // we use the private helper method to create a new partially filled Sudoku game
-        Sudoku sudoku = new Sudoku(makeStartingGrid());
+        Sudoku sudoku = new Sudoku(createStartingGrid());
 
         gameLoop(sudoku);
     }
@@ -73,12 +77,11 @@ public class SudokuGame {
 
     /**
      * To start a new game, we need some initial numbers on the board. This method
-     * creates a new grid with some numbers filled in. The numbers are from a
-     * partially solved Sudoku puzzle borrowed from the mooc course exercises at
-     * https://ohjelmointi-24.mooc.fi/
+     * creates a new hard-coded grid with some numbers filled in. The numbers are
+     * from a partially solved Sudoku puzzle borrowed from the mooc course exercises
+     * at https://ohjelmointi-24.mooc.fi/, https://ohjelmointi-24.mooc.fi/credits
      */
-    private static Grid<Integer> makeStartingGrid() {
-
+    private static Grid<Integer> createStartingGrid() {
         int[][] board = {
                 { 2, 6, 7, 8, 3, 9, 5, 0, 4 },
                 { 9, 0, 3, 5, 1, 0, 6, 0, 0 },
@@ -90,16 +93,6 @@ public class SudokuGame {
                 { 3, 2, 0, 0, 8, 0, 0, 5, 7 },
                 { 7, 4, 5, 0, 0, 3, 9, 0, 1 }
         };
-
-        Grid<Integer> grid = new Grid<>();
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (board[row][col] != 0) {
-                    grid.set(row, col, board[row][col]);
-                }
-            }
-        }
-
-        return grid;
+        return SudokuUtil.createGridFromArrays(board);
     }
 }

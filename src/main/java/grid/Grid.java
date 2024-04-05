@@ -1,8 +1,5 @@
 package grid;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * This class represents a grid, which is a two-dimensional array of cells. A
  * grid can be used to represent a game board, such as a chess board, a
@@ -40,8 +37,6 @@ import java.util.Map;
  */
 public class Grid<Type> {
 
-    private Map<String, Type> grid = new HashMap<>();
-
     /**
      * Creates a new empty grid. The size of the grid is not fixed and the cells can
      * be filled and accessed in any order.
@@ -51,14 +46,11 @@ public class Grid<Type> {
     }
 
     public void set(int row, int col, Type value) {
-        // TODO: use the row and col to store the given value in the internal data
-        // structure
-        grid.put("%d-%d".formatted(row, col), value);
+        // TODO: use the row and col to store the given value
     }
 
     public Type get(int row, int col) {
-        // TODO: use the row and col to retrieve the value from the internal data
-        // structure
-        return grid.getOrDefault("%d-%d".formatted(row, col), null);
+        // TODO: use the row and col to retrieve the value
+        return null;
     }
 }
