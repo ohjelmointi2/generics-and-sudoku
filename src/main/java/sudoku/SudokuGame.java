@@ -74,7 +74,7 @@ public class SudokuGame {
     /**
      * To start a new game, we need some initial numbers on the board. This method
      * creates a new grid with some numbers filled in. The numbers are from a
-     * partially solved Sudoku puzzle borrowed from the mooc course at
+     * partially solved Sudoku puzzle borrowed from the mooc course exercises at
      * https://ohjelmointi-24.mooc.fi/
      */
     private static Grid<Integer> makeStartingGrid() {
@@ -99,6 +99,7 @@ public class SudokuGame {
                 }
             }
         }
+
         return grid;
     }
 }

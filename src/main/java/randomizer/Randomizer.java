@@ -1,6 +1,7 @@
 package randomizer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,8 +36,7 @@ public class Randomizer {
      */
     public <T> T getRandom(List<T> list) {
         // you can assume that the given list is not empty
-
-        return list.get((int) (Math.random() * (list.size())));
+        return getShuffled(list).get(0);
     }
 
     /**
@@ -47,12 +47,7 @@ public class Randomizer {
      * @param list the list to be shuffled (possibly empty)
      */
     public <T> void shuffle(List<T> list) {
-        for (int i = 0; i < list.size(); i++) {
-            int randomIndex = (int) (Math.random() * list.size());
-            T temp = list.get(i);
-            list.set(i, list.get(randomIndex));
-            list.set(randomIndex, temp);
-        }
+        Collections.shuffle(list);
     }
 
     /**
@@ -64,7 +59,6 @@ public class Randomizer {
      */
     public <T> List<T> getShuffled(List<T> list) {
         // hint: you can potentially use the shuffle method you implemented earlier...
-
         List<T> shuffled = new ArrayList<>(list);
         shuffle(shuffled);
         return shuffled;
