@@ -27,7 +27,7 @@ Kun GitHub Actions on saanut koodisi suoritettua, näet tuloksen GitHub-reposito
 Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"* -suoritusta, saat tarkemmat tiedot tehtävän arvioinnista. Sivun alaosassa näkyy saamasi pisteet. Klikkaamalla "Autograding"-otsikkoa pääset katsomaan tarkemmin arvioinnissa suoritetut vaiheet ja niiden tulokset. Kuvitetun ohjeen aiheesta löydät GitHubin dokumentista [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
 
-## Tehtävä 1: [Randomizer.java](./src/main/java/randomizer/Randomizer.java) *(perusteet)*
+## Tehtävä 1: [Randomizer.java](./src/main/java/randomizer/Randomizer.java) *(perusteet, 25 %)*
 
 Tehtävän ensimmäisessä vaiheessa tarkoituksena on toteuttaa omia metodeita, joiden avulla voit hakea listalta satunnaisen arvon, sekoittaa listan satunnaiseen järjestykseen tai ottaa listasta tietyn määrän satunnaisia arvoja. Vastaavaa satunnaisuutta voitaisiin hyödyntää esimerkiksi web-sovelluksessa, jossa etusivulle poimitaan muutamia satunnaisia myynti-ilmoituksia. Myös erilaisiin peleihin, kuten korttiepeleihin, liittyy usein vastaavaa satunnaisuutta.
 
@@ -43,7 +43,7 @@ Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödynt�
 💡 *Vinkki: kiinnitä huomiota metodien samankaltaisuuteen: voisitko kenties kutsua metodeista muita saman luokan metodeita?*
 
 
-## Tehtävä 2: ["Generic randomizer"](./src/main/java/randomizer/Randomizer.java) *(soveltaminen)*
+## Tehtävä 2: ["Generic randomizer"](./src/main/java/randomizer/Randomizer.java) *(soveltaminen, 25 %)*
 
 Tehtävän toisessa osassa jatkat [Randomizer-luokan](./src/main/java/randomizer/Randomizer.java) kehittämistä siten, että kaikista luokan metodeista tehdään **geneerisiä**. Geneeristen metodien avulla voit hyödyntää esimerkiksi satunnaisen arvon hakevaa metodia niin merkkijonojen, numeroiden kuin omien luokkiesi yhteydessä.
 
@@ -68,7 +68,7 @@ Kun olet kopioinut testiluokan paikoilleen [src/test/java/randomizer/](./src/tes
 ```
 
 
-## Tehtävä 3: [Grid.java](./src/main/java/grid/Grid.java) *(soveltaminen)*
+## Tehtävä 3: [Grid.java](./src/main/java/grid/Grid.java) *(soveltaminen, 25 %)*
 
 Tässä tehtävässä toteutettava [Grid-luokka](./src/main/java/grid/Grid.java) edustaa kaksiulotteista ruudukkoa. Ruudukkoa voi käyttää esimerkiksi pelilaudan kuten shakkilaudan, ristinollan tai sudoku-ruudukon mallintamiseen. Grid on tarkoitus toteuttaa geneerisenä, jolloin sen sisältönä voi olla tilanteesta riippuen esimerkiksi numeroita, merkkijonoja tai olioita riippuen pelistä. Yhden Grid-olion kaikki arvot ovat kuitenkin aina keskenään samaa tyyppiä.
 
@@ -82,7 +82,7 @@ Luokan JUnit-testit löytyvät [GridTest-luokasta](./src/test/java/grid/GridTest
 ```
 
 
-## Tehtävä 4: [Sudoku.java](./src/main/java/sudoku/Sudoku.java) *(soveltaminen)*
+## Tehtävä 4: [Sudoku.java](./src/main/java/sudoku/Sudoku.java) *(soveltaminen, 25 %)*
 
 > *"Sudoku on logiikkapeli, jossa tehtävänä on täyttää neliönmuotoinen ruudukko merkeillä niin että jokaisella vaakarivillä ja pystyrivillä sekä jokaisessa osaneliössä käytetään samaa merkkiä tasan yhden kerran. Ruudukossa on aluksi valmiina jo muutama merkki. Yleisin sudoku on 9 × 9 -ruudukko, joka on jaettu yhdeksään 3 × 3 ruudun osaneliöön, ja merkkeinä käytetään numeroita 1–9"*
 >
@@ -144,7 +144,7 @@ Sudoku-tehtävässä on otettu vahvasti vaikutteita Helsingin yliopiston [Ohjelm
 > *Kurssin materiaali on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä, joten voit käyttää ja levittää sitä vapaasti, kunhan alkuperäisten tekijöiden nimiä ei poisteta. Jos teet muutoksia materiaaliin ja haluat levittää muunneltua versiota, se täytyy lisensoida samalla lisenssillä. Materiaalien käyttö kaupalliseen tarkoitukseen on ilman erillistä lupaa kielletty.*
 
 
-## Tehtävä 5: ohjelman paketoiminen suoritettavaksi [JAR-tiedostoksi](https://en.wikipedia.org/wiki/JAR_(file_format)) *(soveltaminen)*
+## Tehtävä 5: ohjelman paketoiminen suoritettavaksi [JAR-tiedostoksi](https://en.wikipedia.org/wiki/JAR_(file_format)) *(extra, 0 %)*
 
 Mikäli haluat luoda sudoku-sovelluksesta paketin, joka ei edellytä lähdekoodien ja IDE-työkalun käyttöä, voit tehdä sen projektissa mukana olevalla Gradle-työkalulla. `build`-komento paketoi sovelluksen .jar-tiedostoksi:
 
@@ -161,6 +161,8 @@ java -jar build\libs\generics-and-sudoku.jar    # windows
 ```
 
 Tarkempia ohjeita Gradlen käyttöön löydät esimerkiksi sivulta [Building Java Projects with Gradle (spring.io)](https://spring.io/guides/gs/gradle).
+
+💡 *Tälle paketointitehtävälle ei ole erillisiä testejä, eikä se vaikuta arviointiin.*
 
 
 ## Tämän tehtävän tekijänoikeudet
