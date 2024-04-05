@@ -1,4 +1,4 @@
-package exercise;
+package randomizer;
 
 import java.util.ArrayList;
 import java.util.List;
