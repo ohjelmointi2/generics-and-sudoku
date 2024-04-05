@@ -57,7 +57,7 @@ Metodien otsikoihin tehtävien muutosten testaaminen aiheuttaa tehtävää aloit
 
 ```
 # suorita seuraava komento projektin juurihakemistossa:
-git mv GenericRandomizerTest.java src/test/java/randomizer/GenericRandomizerTest.java
+git mv GenericRandomizerTest.txt src/test/java/randomizer/GenericRandomizerTest.java
 ```
 
 Kun olet kopioinut testiluokan paikoilleen [src/test/java/randomizer/](./src/test/java/randomizer/)-hakemistoon yllä olevalla komennolla, voit suorittaa testit seuraavasti:

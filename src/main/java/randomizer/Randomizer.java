@@ -32,7 +32,7 @@ public class Randomizer {
      * @param list a non-empty list
      * @return a random element from the list
      */
-    public <T> T getRandom(List<T> list) {
+    public String getRandom(List<String> list) {
         // you can assume that the given list is not empty
 
         return null; // TODO: implement this method
@@ -45,7 +45,7 @@ public class Randomizer {
      *
      * @param list the list to be shuffled (possibly empty)
      */
-    public <T> void shuffle(List<T> list) {
+    public void shuffle(List<String> list) {
         // TODO: implement this method
     }
 
@@ -56,7 +56,7 @@ public class Randomizer {
      * @param list a list of elements (possibly empty)
      * @return a copy of the list with elements in random order
      */
-    public <T> List<T> getShuffled(List<T> list) {
+    public List<String> getShuffled(List<String> list) {
         // hint: you can potentially use the shuffle method you implemented earlier...
 
         return null; // TODO: implement this method
@@ -72,7 +72,7 @@ public class Randomizer {
      * @param sampleSize the size of the sample
      * @return a random sample of the given size from the list
      */
-    public <T> List<T> getRandomSample(List<T> list, int sampleSize) {
+    public List<String> getRandomSample(List<String> list, int sampleSize) {
         // You can assume that the sample size is never larger than the list size.
 
         return null; // TODO: implement this method
