@@ -70,15 +70,34 @@ Kun olet kopioinut testiluokan paikoilleen [src/test/java/randomizer/](./src/tes
 
 ## Tehtävä 3: [Grid.java](./src/main/java/grid/Grid.java) *(soveltaminen, 25 %)*
 
-Tässä tehtävässä toteutettava [Grid-luokka](./src/main/java/grid/Grid.java) edustaa kaksiulotteista ruudukkoa. Ruudukkoa voi käyttää esimerkiksi pelilaudan kuten shakkilaudan, ristinollan tai sudoku-ruudukon mallintamiseen. Grid on tarkoitus toteuttaa geneerisenä, jolloin sen sisältönä voi olla tilanteesta riippuen esimerkiksi numeroita, merkkijonoja tai olioita riippuen pelistä. Yhden Grid-olion kaikki arvot ovat kuitenkin aina keskenään samaa tyyppiä.
+Tässä tehtävässä toteutettava [Grid-luokka](./src/main/java/grid/Grid.java) edustaa **kaksiulotteista** ruudukkoa. Ruudukkoa voi käyttää esimerkiksi pelilaudan kuten shakkilaudan, ristinollan tai sudoku-ruudukon mallintamiseen. Grid on tarkoitus toteuttaa **geneerisenä** (`Grid<Type>`), jolloin ruudukon sisältönä voi olla tilanteesta riippuen esimerkiksi numeroita (`Grid<Integer>`), merkkijonoja (`Grid<String>`) tai muita olioita (`Grid<ChessPiece>`) riippuen sen käyttötarkoituksesta. Yhden Grid-olion kaikki arvot ovat kuitenkin aina keskenään samaa tyyppiä.
 
-Tutustu [Grid-luokan](./src/main/java/grid/Grid.java) javadoc-kommentteihin ja toteuta luokkaan logiikka tiedon tallentamiseksi sekä sen hakemiseksi. Tietoa on tarkoitus tallentaa ja hakea melko samalla tavalla kuin taulukkojen, listojen ja map-tietorakenteen kanssa. Tällä kertaa "avain" vain muodostuu kahdesta arvosta, eli rivin sekä sarakkeen numeroista.
+Tutustu [Grid-luokan](./src/main/java/grid/Grid.java) javadoc-kommentteihin ja toteuta luokkaan logiikka tiedon tallentamiseksi sekä sen hakemiseksi. Tietoa on tarkoitus tallentaa ja hakea melko samalla tavalla kuin taulukkojen, listojen ja map-tietorakenteen kanssa. Tällä kertaa "avain" vain muodostuu kahdesta arvosta: rivin sekä sarakkeen numeroista. Lisähaasteena ruudukon koon on kasvettava dynaamisesti ja siihen pitää voida lisätä uusia arvoja missä tahansa järjestyksessä.
 
 Luokan JUnit-testit löytyvät [GridTest-luokasta](./src/test/java/grid/GridTest.java), jonka voit suorittaa esimerkiksi seuraavasti:
 
 ```
 ./gradlew test --tests GridTest        # unix
 .\gradlew.bat test --tests GridTest    # windows
+```
+
+### 💡 Vinkit
+
+Joudut valitsemaan Grid-luokan sisällä tiedon tallentamisessa käytettävän tietorakenteen itse. Voit hyödyntää ongelman ratkaisemisessa esimerkiksi yksiulotteista tietorakennetta ja tallentaa listalle olioita, jotka koostuvat rivi- ja sarakenumeroista sekä varsinaisesta tallennettavasta arvosta.
+
+Toinen, tehokkaampi vaihtoehto voisi olla soveltaa Map-tietorakennetta siten, että yhdistät itse rivin ja sarakkeen merkkijonomuotoiseksi avaimeksi (`map.put("5:8", 7)`, `map.get("5:8")`).
+
+Kolmas, edistyneempi lähestymistapa olisi luoda rivin ja sarakkeen tallentamiseksi uusi `Position`-luokka (`map.put(new Position(5, 8), 7)`). Jos `Position`-olioita käytetään hajautustaulun avaimina, on luokkaan toteutettava myös [hashCode-metodi](https://www.baeldung.com/java-hashcode), jota Java käyttää tiedon hajauttamisessa. `Position` kannattanee toisaalta toteuttaa [`record`-luokkana, koska Java muodostaa niille `hashCode`-metodin automaattisesti](https://docs.oracle.com/en/java/javase/17/language/records.html).
+
+```java
+/**
+ * "The appropriate accessors, constructor, equals, hashCode, and toString
+ * methods are created automatically."
+ *
+ * See https://docs.oracle.com/en/java/javase/17/language/records.html
+ */
+record Position(int row, int col) {
+}
 ```
 
 
@@ -165,6 +184,6 @@ Tarkempia ohjeita Gradlen käyttöön löydät esimerkiksi sivulta [Building Jav
 💡 *Tälle paketointitehtävälle ei ole erillisiä testejä, eikä se vaikuta arviointiin.*
 
 
-## Tämän tehtävän tekijänoikeudet
+## Tämän tehtävän lisenssi
 
 Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä. Tehtävänannon, tehtäväpohjien ja automaattisten testien luonnissa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub Copilot -tekoälytyökalua.

@@ -53,6 +53,8 @@ public class Sudoku {
          * You will likely want to create separate private methods for checking the row,
          * column and subgrid!
          */
+
+        // TODO: use the board object to check if the given number can be placed
         throw new IllegalArgumentException();
     }
 
@@ -65,6 +67,8 @@ public class Sudoku {
      * @return the number in the cell or null if the cell is empty
      */
     public Integer getNumber(int row, int col) throws IllegalArgumentException {
+        // TODO: use the board object to get the number in the given row and column
+
         return null; // TODO: implement this method
     }
 

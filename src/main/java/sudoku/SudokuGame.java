@@ -5,7 +5,6 @@ import java.util.Scanner;
 import grid.Grid;
 
 /**
- *
  * This class contains the game loop for a Sudoku game. The game is played in
  * the console by entering the row, column and number to place on the board.
  *
