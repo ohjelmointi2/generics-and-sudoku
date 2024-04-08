@@ -11,12 +11,15 @@ import java.util.List;
  * RandomizerTest. You can utilize the Math.random() method and Random class
  * from the Java standard library to generate random numbers, which you can then
  * use to get random elements from the lists. You can also use the Collections
- * class in the Java standard library to shuffle lists.
+ * class in the Java standard library to shuffle lists. In the first task you
+ * don't need to worry about the <Type> parameter, just implement the methods to
+ * work with strings.
  *
  * The second task is to make all methods in this class **generic**. This means
- * that the class should work with any type of objects, not just strings. As the
- * methods do not actually depend on the items being strings, this should be
- * relatively straightforward. You only need to change the method signatures.
+ * that the class should work with any type used in the <Type> parameter, not
+ * just strings. As the methods do not actually depend on the items on the lists
+ * being strings, this should be relatively straightforward. You only need to
+ * change the method signatures.
  *
  * The second task is tested with the GenericRandomizerTest class. This class
  * will not compile until the methods have been made generic, so we have not
@@ -24,7 +27,7 @@ import java.util.List;
  * root of the project and you can move it to the correct directory once you are
  * ready to work on it.
  */
-public class Randomizer {
+public class Randomizer<Type> {
 
     /**
      * This method returns a random element from the given list.

@@ -47,7 +47,8 @@ Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödynt�
 
 Tehtävän toisessa osassa jatkat [Randomizer-luokan](./src/main/java/randomizer/Randomizer.java) kehittämistä siten, että kaikista luokan metodeista tehdään **geneerisiä**. Geneeristen metodien avulla voit hyödyntää esimerkiksi satunnaisen arvon hakevaa metodia niin merkkijonojen, numeroiden kuin omien luokkiesi yhteydessä.
 
-Tehtävän tässä osassa sinun ei välttämättä tarvitse juurikaan muuttaa toteuttamiesi metodien sisältöä, vaan muutokset kohdistuvat pääasiassa metodien otsikoihin. Jos et vielä perehtynyt geneerisiin tyyppeihin [dev.java-tutoriaalin](https://dev.java/learn/generics/) tai [Coding with John-videon](https://youtu.be/K1iu1kXkVoA) avulla, sinun kannattaa aloittaa niistä.
+Tehtävän tässä osassa sinun ei välttämättä tarvitse juurikaan muuttaa toteuttamiesi metodien sisältöä, vaan muutokset kohdistuvat pääasiassa metodien otsikoihin, joissa konkreettisen `String`-tyypin sijasta käytetään `Type`-tyyppimuuttujaa. Jos et vielä perehtynyt geneerisiin tyyppeihin [dev.java-tutoriaalin](https://dev.java/learn/generics/) tai [Coding with John-videon](https://youtu.be/K1iu1kXkVoA) avulla, sinun kannattaa aloittaa niistä.
+
 
 ### Muutosten testaaminen
 

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 public class RandomizerTest {
 
-    private Randomizer randomizer = new Randomizer();
+    private Randomizer<String> randomizer = new Randomizer<>();
     private List<String> locations = List.of("pasila", "malmi", "haaga", "porvoo", "vierumäki");
 
     @Test
