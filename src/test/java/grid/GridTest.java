@@ -59,7 +59,10 @@ public class GridTest {
         Grid<Boolean> gameOfLife = new Grid<>();
 
         // sets an arbitrary cell to true
-        gameOfLife.set(10_000, 20_000, true);
+        gameOfLife.set(100_000, 200_000, true);
+
+        assertEquals(true, gameOfLife.get(100_000, 200_000),
+                "The grid should be able to expand to 100 000 rows and 200 000 columns");
     }
 
     @Test
