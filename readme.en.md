@@ -164,23 +164,26 @@ https://programming-24.mooc.fi/) at https://programming-24.mooc.fi/part-5. The p
 
 Mikäli haluat luoda sudoku-sovelluksesta paketin, joka ei edellytä lähdekoodien ja IDE-työkalun käyttöä, voit tehdä sen projektissa mukana olevalla Gradle-työkalulla. `build`-komento paketoi sovelluksen .jar-tiedostoksi:
 
+## Task 5: Packaging the program into an executable [JAR file](https://en.wikipedia.org/wiki/JAR_(file_format)) *(extra, 0%)*
+
+If you want to create a package of the Sudoku application that does not require the use of source code and an IDE tool, you can do so with the Gradle tool included in the project. The `build` command packages the application into a .jar file:
+
 ```
 ./gradlew build         # unix
 .\gradlew.bat build     # windows
 ```
 
-Paketoitu tiedosto ilmestyy [build/libs/](./build/libs/) alihakemistoon, josta se voidaan suorittaa `java -jar`-komennolla:
+The packaged file will appear in the [build/libs/](./build/libs/) subdirectory, from where it can be executed with the `java -jar` command:
 
 ```
 java -jar build/libs/generics-and-sudoku.jar    # unix
 java -jar build\libs\generics-and-sudoku.jar    # windows
 ```
 
-Tarkempia ohjeita Gradlen käyttöön löydät esimerkiksi sivulta [Building Java Projects with Gradle (spring.io)](https://spring.io/guides/gs/gradle).
+For more detailed instructions on using Gradle, you can refer to [Building Java Projects with Gradle (spring.io)](https://spring.io/guides/gs/gradle).
 
-💡 *Tälle paketointitehtävälle ei ole erillisiä testejä, eikä se vaikuta arviointiin.*
+💡 *There are no separate tests for this packaging task, and it does not affect the evaluation.*
 
+## This exercise's license
 
-## Tämän tehtävän lisenssi
-
-Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä. Tehtävänannon, tehtäväpohjien ja automaattisten testien luonnissa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub Copilot -tekoälytyökalua.
+This task was developed by Teemu Havulinna and translated to English by Kalle Ilves and is licensed under the [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/). The task description, task templates, and automatic tests were created using the ChatGPT 3.5 language model and the GitHub Copilot AI tool.
