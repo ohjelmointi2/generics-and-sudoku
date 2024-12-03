@@ -6,7 +6,7 @@ To get acquainted with the topic, we recommend reading, for example, the [dev.ja
 
 The task consists of several parts, which are evaluated separately using pre-written tests.
 
-## Tehtävän aloittaminen
+## Starting the exercise
 
 Start by cloning the Git repository to your local machine. The exercise must be done in your own copy, so make sure the repository URL includes your GitHub username! You can create your own copy through the GitHub Classroom link provided in your course assignment.
 
