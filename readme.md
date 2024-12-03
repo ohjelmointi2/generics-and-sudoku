@@ -1,3 +1,6 @@
+> [!NOTE]  
+> The English translation for this exercise can be found in [this file](./readme.en.md).
+
 # Geneeriset tyypit ja Sudoku-peli
 
 Tämän harjoitustehtäväpaketin myötä opit määrittelemään geneerisiä metodeita sekä luokkia. Aihetta käsitellään aluksi luomalla yleiskäyttöisiä metodeita, joiden avulla voidaan käsitellä eri tyyppistä dataa ilman, että ohjelmalogiikkaa joudutaan toistamaan eri tyyppejä varten. Tehtävät etenevät oman kaksiulotteisen kokoelman ([Grid](./src/main/java/grid/Grid.java)) toteuttamiseen. Omaa kaksiulotteista kokoelmaa hyödynnetään lopulta Sudoku-pelin tietorakenteena.
