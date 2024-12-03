@@ -1,31 +1,28 @@
-# Geneeriset tyypit ja Sudoku-peli
+# Generic types and Sudoku game
 
-Tämän harjoitustehtäväpaketin myötä opit määrittelemään geneerisiä metodeita sekä luokkia. Aihetta käsitellään aluksi luomalla yleiskäyttöisiä metodeita, joiden avulla voidaan käsitellä eri tyyppistä dataa ilman, että ohjelmalogiikkaa joudutaan toistamaan eri tyyppejä varten. Tehtävät etenevät oman kaksiulotteisen kokoelman ([Grid](./src/main/java/grid/Grid.java)) toteuttamiseen. Omaa kaksiulotteista kokoelmaa hyödynnetään lopulta Sudoku-pelin tietorakenteena.
+With this exercise package, you will learn to define generic methods and classes. The topic is initially covered by creating general-purpose methods that can handle different types of data without having to repeat the program logic for different types. The tasks progress to implementing your own two-dimensional collection ([Grid](./src/main/java/grid/Grid.java)). Your own two-dimensional collection will eventually be used as the data structure for a Sudoku game.
 
-Aiheeseen perehtymiseksi suosittelemme esimerkiksi [dev.java-tutoriaalin](https://dev.java/learn/generics/) lukua [Generics](https://dev.java/learn/generics/). Lisäksi video [Generics In Java - Full Simple Tutorial (Coding with John, YouTube)](https://youtu.be/K1iu1kXkVoA) on hyvä lähde liikkeelle pääsemiseksi.
+To get acquainted with the topic, we recommend reading, for example, the [dev.java tutorial on Generics](https://dev.java/learn/generics/). Additionally, the video[ Generics In Java - Full Simple Tutorial (Coding with John, YouTube)](https://youtu.be/K1iu1kXkVoA) is a good resource to get started.
 
-Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja testejä.
-
+The task consists of several parts, which are evaluated separately using pre-written tests.
 
 ## Tehtävän aloittaminen
 
-Aloita kloonaamalla Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
+Start by cloning the Git repository to your local machine. The exercise must be done in your own copy, so make sure the repository URL includes your GitHub username! You can create your own copy through the GitHub Classroom link provided in your course assignment.
 
 ```sh
-git clone https://github.com/varmista-etta-github-tunnuksesi-on-repositorion-osoitteessa.git
+git clone https://github.com/make-sure-that-the-repository-address-contains-your-account.git
 ```
 
-Kloonattuasi projektin omalle koneellesi, avaa se koodieditorissasi.
+After cloning the project to your local machine, open it in your code editor.
 
+## Submitting solutions
 
-## Vastausten lähettäminen
+Once you have solved some or all of the tasks and committed your answers, submit the solutions for evaluation using the `git push` command. Git push will automatically trigger a GitHub Actions workflow that compiles and tests your solutions, providing a pass or fail result for each test.
 
-Kun olet saanut osan tai kaikki tehtävistä ratkaistua ja commitoinut vastauksesi, lähetä ratkaisut arvioitavaksi `git push`-komennolla. Git push käynnistää automaattisesti GitHub actions -workflow:n, joka kääntää sekä testaa ratkaisusi ja antaa jokaisesta testistä joko hyväksytyn tai hylätyn tuloksen.
+Once the GitHub Actions has executed your code, you see the results in your GitHub repository's [Actions tab](../../actions/workflows/classroom.yml). It usually takes a few minutes for the assesment to be completed. 
 
-Kun GitHub Actions on saanut koodisi suoritettua, näet tuloksen GitHub-repositoriosi [Actions-välilehdellä](../../actions/workflows/classroom.yml). Arvioinnin valmistumiseen menee tyypillisesti pari minuuttia.
-
-Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"* -suoritusta, saat tarkemmat tiedot tehtävän arvioinnista. Sivun alaosassa näkyy saamasi pisteet. Klikkaamalla "Autograding"-otsikkoa pääset katsomaan tarkemmin arvioinnissa suoritetut vaiheet ja niiden tulokset. Kuvitetun ohjeen aiheesta löydät GitHubin dokumentista [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
-
+By clicking on the latest *"GitHub Classroom Workflow"* execution from the link above, you will get detailed information about the task evaluation. At the bottom of the page, you can see the points you received. By clicking on the "Autograding" heading, you can view the steps performed during the evaluation and their results in more detail. You can find an illustrated guide on this topic in the GitHub documentation [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
 ## Tehtävä 1: [Randomizer.java](./src/main/java/randomizer/Randomizer.java) *(perusteet, 25 %)*
 
@@ -35,13 +32,20 @@ Tehtävässä koodattava [Randomizer-luokka](./src/main/java/randomizer/Randomiz
 
 Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödyntää tehtävän valmiita JUnit-yksikkötestejä, jotka löytyvät [RandomizerTest-luokasta](./src/test/java/randomizer/RandomizerTest.java). Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
+## Exercise 1: Randomizer.java *(basics, 25%)*
+
+In the first phase of the task, the goal is to implement your own methods that allow you to fetch a random value from a list, shuffle the list into a random order, or take a certain number of random values from the list. Similar randomness could be utilized, for example, in a web application where a few random sales listings are picked for the front page. Various games, such as card games, also often involve similar randomness.
+
+The [Randomizer](./src/main/java/randomizer/Randomizer.java) class to be coded in the task consists of predefined methods whose javadoc comments explain how the method should work. Your task is to read the comments and implement the method content to match the method name and description.
+
+You can test your code using your own `main` method, or you can use the provided JUnit unit tests for the task, which can be found in the RandomizerTest class. You can run the tests using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or the [Gradle automation tool](https://docs.gradle.org/current/userguide/java_testing.html):
+
 ```
 ./gradlew test --tests RandomizerTest        # unix
 .\gradlew.bat test --tests RandomizerTest    # windows
 ```
 
-💡 *Vinkki: kiinnitä huomiota metodien samankaltaisuuteen: voisitko kenties kutsua metodeista muita saman luokan metodeita?*
-
+💡 Tip: Pay attention to the similarity of the methods: could you perhaps call other methods of the same class from these methods?
 
 ## Tehtävä 2: ["Generic randomizer"](./src/main/java/randomizer/Randomizer.java) *(soveltaminen, 25 %)*
 
@@ -49,19 +53,24 @@ Tehtävän toisessa osassa jatkat [Randomizer-luokan](./src/main/java/randomizer
 
 Tehtävän tässä osassa sinun ei välttämättä tarvitse juurikaan muuttaa toteuttamiesi metodien sisältöä, vaan muutokset kohdistuvat pääasiassa metodien otsikoihin, joissa konkreettisen `String`-tyypin sijasta käytetään `Type`-tyyppimuuttujaa. Jos et vielä perehtynyt geneerisiin tyyppeihin [dev.java-tutoriaalin](https://dev.java/learn/generics/) tai [Coding with John-videon](https://youtu.be/K1iu1kXkVoA) avulla, sinun kannattaa aloittaa niistä.
 
+## Exercise 2: "Generic randomizer" *(applying, 25%)*
 
-### Muutosten testaaminen
+In the second part of the task, you will continue developing the [Randomizer](./src/main/java/randomizer/Randomizer.java) class so that all the class methods become **generic**. With generic methods, you can use, for example, the method that fetches a random value with strings, numbers, and your own classes.
 
-Tässä tehtävässä [Randomizer-luokkaan](./src/main/java/randomizer/Randomizer.java) tehtävät muutokset eivät saa rikkoa olemassa olevaa toiminnallisuutta. Edellisessä osassa suoritettujen [RandomizerTest-luokan](./src/test/java/randomizer/RandomizerTest.java) testien tulisi siis edelleen mennä läpi.
+In this part of the task, you may not need to change much of the content of the methods you have implemented. Instead, the changes mainly focus on the method headers, where a `Type` type variable is used instead of a concrete `String` type. If you haven't yet familiarized yourself with generic types through the [dev.java tutorial](https://dev.java/learn/generics/) or the [Coding with John-videon](https://youtu.be/K1iu1kXkVoA), you should start with those.
 
-Metodien otsikoihin tehtävien muutosten testaaminen aiheuttaa tehtävää aloitettaessa käännösvirheitä, koska tarvittavia muutoksia ei ole vielä tehty testiluokassa kutsuttaviin metodeihin. Testiluokka on siksi sijoitettu projektissa lähdekooditiedostojen ulkopuolelle. Sinun tuleekin siirtää tehtävän tarkastuksessa käytettävä `GenericRandomizerTest`-testiluokka oikeaan hakemistoon tehtävää aloittaessasi. Tämä voidaan tehdä `git mv`-komennolla, joka päivittää tiedon tiedoston siirrosta samalla myös versionhallintaan:
+### Testing the changes
+
+In this task, the changes made to the [Randomizer](./src/main/java/randomizer/Randomizer.java) class must not break existing functionality. The tests performed in the previous part with the [Ran(./src/test/java/randomizer/RandomizerTest.java)domizerTest] class should still pass.
+
+Testing the changes made to the method headers will cause compilation errors at the start of the task because the necessary changes have not yet been made to the methods called in the test class. Therefore, the test class is placed outside the source code files in the project. You need to move the `GenericRandomizerTest` test class used for task inspection to the correct directory when starting the task. This can be done with the `git mv` command, which also updates the information about the file move in version control:
 
 ```
 # suorita seuraava komento projektin juurihakemistossa:
 git mv GenericRandomizerTest.txt src/test/java/randomizer/GenericRandomizerTest.java
 ```
 
-Kun olet kopioinut testiluokan paikoilleen [src/test/java/randomizer/](./src/test/java/randomizer/)-hakemistoon yllä olevalla komennolla, voit suorittaa testit seuraavasti:
+Once you have copied the test class to the [src/test/java/randomizer/](./src/test/java/randomizer/) directory using the above command, you can run the tests as follows:
 
 ```
 ./gradlew test --tests GenericRandomizerTest        # unix
