@@ -47,12 +47,6 @@ You can test your code using your own `main` method, or you can use the provided
 
 💡 Tip: Pay attention to the similarity of the methods: could you perhaps call other methods of the same class from these methods?
 
-## Tehtävä 2: ["Generic randomizer"](./src/main/java/randomizer/Randomizer.java) *(soveltaminen, 25 %)*
-
-Tehtävän toisessa osassa jatkat [Randomizer-luokan](./src/main/java/randomizer/Randomizer.java) kehittämistä siten, että kaikista luokan metodeista tehdään **geneerisiä**. Geneeristen metodien avulla voit hyödyntää esimerkiksi satunnaisen arvon hakevaa metodia niin merkkijonojen, numeroiden kuin omien luokkiesi yhteydessä.
-
-Tehtävän tässä osassa sinun ei välttämättä tarvitse juurikaan muuttaa toteuttamiesi metodien sisältöä, vaan muutokset kohdistuvat pääasiassa metodien otsikoihin, joissa konkreettisen `String`-tyypin sijasta käytetään `Type`-tyyppimuuttujaa. Jos et vielä perehtynyt geneerisiin tyyppeihin [dev.java-tutoriaalin](https://dev.java/learn/generics/) tai [Coding with John-videon](https://youtu.be/K1iu1kXkVoA) avulla, sinun kannattaa aloittaa niistä.
-
 ## Exercise 2: "Generic randomizer" *(applying, 25%)*
 
 In the second part of the task, you will continue developing the [Randomizer](./src/main/java/randomizer/Randomizer.java) class so that all the class methods become **generic**. With generic methods, you can use, for example, the method that fetches a random value with strings, numbers, and your own classes.
@@ -66,7 +60,7 @@ In this task, the changes made to the [Randomizer](./src/main/java/randomizer/Ra
 Testing the changes made to the method headers will cause compilation errors at the start of the task because the necessary changes have not yet been made to the methods called in the test class. Therefore, the test class is placed outside the source code files in the project. You need to move the `GenericRandomizerTest` test class used for task inspection to the correct directory when starting the task. This can be done with the `git mv` command, which also updates the information about the file move in version control:
 
 ```
-# suorita seuraava komento projektin juurihakemistossa:
+# execute the following command in the root folder of the project:
 git mv GenericRandomizerTest.txt src/test/java/randomizer/GenericRandomizerTest.java
 ```
 
@@ -77,27 +71,26 @@ Once you have copied the test class to the [src/test/java/randomizer/](./src/tes
 .\gradlew.bat test --tests GenericRandomizerTest    # windows
 ```
 
+## Exercise 3: Grid.java *(applying, 25%)*
 
-## Tehtävä 3: [Grid.java](./src/main/java/grid/Grid.java) *(soveltaminen, 25 %)*
+The [Grid](./src/main/java/grid/Grid.java) class to be implemented in this task represents a **two-dimensional** grid. The grid can be used to model a game board such as a chessboard, tic-tac-toe, or sudoku grid. The Grid is intended to be implemented as a **generic** (`Grid<Type>`), so the contents of the grid can be, for example, numbers (`Grid<Integer>`), strings (`Grid<String>`), or other objects (`Grid<ChessPiece>`) depending on its use. However, all values in a single Grid object are always of the same type.
 
-Tässä tehtävässä toteutettava [Grid-luokka](./src/main/java/grid/Grid.java) edustaa **kaksiulotteista** ruudukkoa. Ruudukkoa voi käyttää esimerkiksi pelilaudan kuten shakkilaudan, ristinollan tai sudoku-ruudukon mallintamiseen. Grid on tarkoitus toteuttaa **geneerisenä** (`Grid<Type>`), jolloin ruudukon sisältönä voi olla tilanteesta riippuen esimerkiksi numeroita (`Grid<Integer>`), merkkijonoja (`Grid<String>`) tai muita olioita (`Grid<ChessPiece>`) riippuen sen käyttötarkoituksesta. Yhden Grid-olion kaikki arvot ovat kuitenkin aina keskenään samaa tyyppiä.
+Familiarize yourself with the [Grid](./src/main/java/grid/Grid.java) class javadoc comments and implement the logic for storing and retrieving data in the class. The data is intended to be stored and retrieved in much the same way as with arrays, lists, and map data structures. This time, the "key" consists of two values: the row and column numbers. Additionally, the size of the grid must grow dynamically, and new values must be able to be added in any order.
 
-Tutustu [Grid-luokan](./src/main/java/grid/Grid.java) javadoc-kommentteihin ja toteuta luokkaan logiikka tiedon tallentamiseksi sekä sen hakemiseksi. Tietoa on tarkoitus tallentaa ja hakea melko samalla tavalla kuin taulukkojen, listojen ja map-tietorakenteen kanssa. Tällä kertaa "avain" vain muodostuu kahdesta arvosta: rivin sekä sarakkeen numeroista. Lisähaasteena ruudukon koon on kasvettava dynaamisesti ja siihen pitää voida lisätä uusia arvoja missä tahansa järjestyksessä.
-
-Luokan JUnit-testit löytyvät [GridTest-luokasta](./src/test/java/grid/GridTest.java), jonka voit suorittaa esimerkiksi seuraavasti:
+The JUnit tests for the class can be found in the [GridTest](./src/test/java/grid/GridTest.java) class, which you can run as follows:
 
 ```
 ./gradlew test --tests GridTest        # unix
 .\gradlew.bat test --tests GridTest    # windows
 ```
 
-### 💡 Vinkit
+### 💡 Tips
 
-Joudut valitsemaan Grid-luokan sisällä tiedon tallentamisessa käytettävän tietorakenteen itse. Voit hyödyntää ongelman ratkaisemisessa esimerkiksi yksiulotteista tietorakennetta ja tallentaa listalle olioita, jotka koostuvat rivi- ja sarakenumeroista sekä varsinaisesta tallennettavasta arvosta.
+You will need to choose the data structure used for storing information within the Grid class yourself. You can solve the problem by using a one-dimensional data structure and storing objects in a list that consist of row and column numbers as well as the actual value to be stored.
 
-Toinen, tehokkaampi vaihtoehto voisi olla soveltaa Map-tietorakennetta siten, että yhdistät itse rivin ja sarakkeen merkkijonomuotoiseksi avaimeksi (`map.put("5:8", 7)`, `map.get("5:8")`).
+Another, more efficient option could be to use a Map data structure, combining the row and column into a string key (`map.put("5:8", 7)`, `map.get("5:8")`).
 
-Kolmas, edistyneempi lähestymistapa olisi luoda rivin ja sarakkeen tallentamiseksi uusi `Position`-luokka (`map.put(new Position(5, 8), 7)`). Jos `Position`-olioita käytetään hajautustaulun avaimina, on luokkaan toteutettava myös [hashCode-metodi](https://www.baeldung.com/java-hashcode), jota Java käyttää tiedon hajauttamisessa. `Position` kannattanee toisaalta toteuttaa [`record`-luokkana, koska Java muodostaa niille `hashCode`-metodin automaattisesti](https://docs.oracle.com/en/java/javase/17/language/records.html).
+A third, more advanced approach would be to create a new `Position` class to store the row and column (`map.put(new Position(5, 8), 7)`). If `Position` objects are used as keys in a hash table, the class must also implement the [hashCode](https://www.baeldung.com/java-hashcode) method, which Java uses for hashing data. On the other hand, it might be beneficial to implement `Position` as a [`record` class, since Java automatically generates the `hashCode` method for them](https://docs.oracle.com/en/java/javase/17/language/records.html).
 
 ```java
 /**
