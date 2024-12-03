@@ -103,20 +103,19 @@ record Position(int row, int col) {
 }
 ```
 
+## Exercise 4: Sudoku.java *(applying, 25 %)*
 
-## Tehtävä 4: [Sudoku.java](./src/main/java/sudoku/Sudoku.java) *(soveltaminen, 25 %)*
-
-> *"Sudoku on logiikkapeli, jossa tehtävänä on täyttää neliönmuotoinen ruudukko merkeillä niin että jokaisella vaakarivillä ja pystyrivillä sekä jokaisessa osaneliössä käytetään samaa merkkiä tasan yhden kerran. Ruudukossa on aluksi valmiina jo muutama merkki. Yleisin sudoku on 9 × 9 -ruudukko, joka on jaettu yhdeksään 3 × 3 ruudun osaneliöön, ja merkkeinä käytetään numeroita 1–9"*
+> *"Sudoku is a logic-based, combinatorial number-placement puzzle. In classic Sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9"*
 >
-> Wikipedia. https://fi.wikipedia.org/wiki/Sudoku
+> Wikipedia. https://en.wikipedia.org/wiki/Sudoku
 
-Tämä Sudoku-harjoitus toimii esimerkkinä siitä, miten voit erottaa pelilogiikan, tiedon tallennuksen ja käyttöliittymän erillisiksi luokiksi.
+This Sudoku exercise serves as an example of how you can separate game logic, data storage, and the user interface into distinct classes.
 
-Itse pelilogiikka toteutetaan [Sudoku-luokassa](./src/main/java/sudoku/Sudoku.java), jossa tarkastetaan että siirrot noudattavat pelin sääntöjä. [Grid-luokkaa](./src/main/java/grid/Grid.java) puolestaan käytetään numeroiden tallentamisessa kaksiulotteiselle pelilaudalle. Varsinainen pelin käyttöliittymä tulosteineen ja syötteineen on toteutettu erilliseen [SudokuGame-luokkaan](./src/main/java/sudoku/SudokuGame.java).
+The game logic itself is implemented in the [Sudoku](./src/main/java/sudoku/Sudoku.java) class, where it checks that the moves follow the game rules. The [Grid](./src/main/java/grid/Grid.java) class is used to store numbers on the two-dimensional game board. The actual game interface with outputs and inputs is implemented in a separate [SudokuGame](./src/main/java/sudoku/SudokuGame.java) class.
 
-Jakamalla sovelluksen logiikkaa eri luokkiin ja tekemällä niistä tarvittaessa geneerisiä koodi tulee modulaarisemmaksi ja helpommaksi ylläpitää ja testata. Myös koodin uudelleenkäyttö helpottuu, ja voisimme käyttää Grid-luokkaa sellaisenaan myös muihin peleihin, jotka hyödyntävät kaksiulotteista ruudukkoa. Sudoku-luokkaa voitaisiin puolestaan hyödyntää sellaisenaan erilaisten käyttöliittymien kanssa, esimerkiksi osana työpöytä- tai web-sovellusta.
+By dividing the application logic into different classes and making them generic if necessary, the code becomes more modular and easier to maintain and test. Code reuse is also facilitated, and we could use the Grid class as-is for other games that utilize a two-dimensional grid. The Sudoku class could, in turn, be used as-is with different interfaces, for example, as part of a desktop or web application.
 
-Peli on alkutilanteessa keskeneräinen, mutta voit silti käynnistää sen suorittamalla [SudokuGame-luokan main-metodin](./src/main/java/sudoku/SudokuGame.java). Kun etenet tehtävässä ja saat Sudoku-luokan metodeja toteutettua, lopputulos näyttää esimerkiksi seuraavalta:
+The game is initially incomplete, but you can still run it by executing the main method of the [SudokuGame](./src/main/java/sudoku/SudokuGame.java) class. As you progress in the task and implement the methods of the Sudoku class, the end result will look something like this:
 
 ```
 ███████╗██╗   ██╗██████╗  ██████╗ ██╗  ██╗██╗   ██╗
