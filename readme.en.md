@@ -144,26 +144,21 @@ Enter the column (0-8): 1
 Enter the number (1-9): 8
 ```
 
-Tässä tehtävässä sinun tarvitsee tehdä muutoksia ainoastaan [Sudoku-luokassa](./src/main/java/sudoku/Sudoku.java) oleviin `setNumber`-, `getNumber`-, `isSolved`- sekä `toString`-metodeihin. Huomaa, että esimerkiksi `setNumber`-metodin edellyttämät tarkastukset rivien, sarakkeiden ja osaneliöiden suhteen voivat olla varsin monimutkaisia, ja ne kannattaa ehkä toteuttaa erillisiin itse suunnittelemiisi apumetodeihin.
+In this task, you only need to make changes to the `setNumber`, `getNumber`, `isSolved`, and `toString` methods in the [Sudoku](./src/main/java/sudoku/Sudoku.java) class. Note that the checks required by the `setNumber` method for rows, columns, and subgrids can be quite complex, and it might be a good idea to implement them in separate helper methods that you design yourself.
 
-Sudoku-luokan JUnit-testit löytyvät [SudokuTest-luokasta](./src/test/java/sudoku/SudokuTest.java) ja voit suorittaa ne esimerkiksi seuraavasti:
+The JUnit tests for the Sudoku class can be found in the [SudokuTest](./src/test/java/sudoku/SudokuTest.java) class, and you can run them as follows:
 
 ```
 ./gradlew test --tests SudokuTest        # unix
 .\gradlew.bat test --tests SudokuTest    # windows
 ```
 
-[SudokuGame-luokalle](./src/main/java/sudoku/SudokuGame.java) ei ole erillisiä yksikkötestejä, vaan voit testata sen toimivuuden suorittamalla koodia ja kokeilemalla eri arvojen sijoittamista eri ruutuihin.
+There are no separate unit tests for the [SudokuGame](./src/main/java/sudoku/SudokuGame.java) class, but you can test its functionality by running the code and trying to place different values in different cells.
 
+### Sudoku ❤ Programming MOOC
 
-### Sudoku ❤ Ohjelmoinnin MOOC
-
-Sudoku-tehtävässä on otettu vahvasti vaikutteita Helsingin yliopiston [Ohjelmoinnin perusteet -MOOC-kurssin](https://ohjelmointi-24.mooc.fi/) Python-kielisistä tehtävistä osoitteessa https://ohjelmointi-24.mooc.fi/osa-5. Sudoku-tehtävässä osittain täytetty Sudoku-ruudukko on myös lainattu saman MOOC-kurssin tehtävistä. [Ohjelmoinnin MOOC on lisensoitu CC BY-NC-SA 4.0 -lisenssillä](https://ohjelmointi-24.mooc.fi/credits):
-
-> *Kurssimateriaalin ja tehtävien tekijät ovat Erkki Kaila, Antti Laaksonen ja Matti Luukkainen. Muutama kurssin tehtävistä on Arto Hellaksen (né Vihavainen) käsialaa.*
->
-> *Kurssin materiaali on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä, joten voit käyttää ja levittää sitä vapaasti, kunhan alkuperäisten tekijöiden nimiä ei poisteta. Jos teet muutoksia materiaaliin ja haluat levittää muunneltua versiota, se täytyy lisensoida samalla lisenssillä. Materiaalien käyttö kaupalliseen tarkoitukseen on ilman erillistä lupaa kielletty.*
-
+The Sudoku task is heavily influenced by the Python exercises from the University of Helsinki's [Introduction to Programming MOOC course](
+https://programming-24.mooc.fi/) at https://programming-24.mooc.fi/part-5. The partially filled Sudoku grid in the Sudoku task is also borrowed from the exercises of the same MOOC course. The Programming MOOC is licensed under the [CC BY-NC-SA 4.0 license](https://programming-24.mooc.fi/credits).
 
 ## Tehtävä 5: ohjelman paketoiminen suoritettavaksi [JAR-tiedostoksi](https://en.wikipedia.org/wiki/JAR_(file_format)) *(extra, 0 %)*
 
